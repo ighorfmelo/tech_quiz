@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         'blue-900': '#072750',
         'purble-800': '#5803b1',
+        'green-pill': '#1abc9c'
       },
     },
   },

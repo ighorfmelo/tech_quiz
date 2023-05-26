@@ -19,7 +19,7 @@ export default function Start({openQuiz}: StartProps) {
       <Logo />
       <p className="flex mt-48 justify-center uppercase font-bold text-4xl text-blue-100 drop-shadow-2xl shadow-black">Homeopath</p>
       <div className="flex justify-center mt-16">
-        <Button onClick={handleButtonClick} text="Start Game" color="red"/>
+        <Button onClick={handleButtonClick} text="Start Game" />
       </div>
     </main>
   )

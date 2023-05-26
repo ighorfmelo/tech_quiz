@@ -3,14 +3,21 @@ import React from 'react'
 
 type ButtonProps = {
   text: string,
-  color: string,
   onClick: () => void,
 }
 
 
-export default function Button({ color = 'bg-red', text, onClick }: ButtonProps) {  
+export default function Button({ text, onClick }: ButtonProps) {  
   return (
     <button onClick={onClick} className="w-44 p-4 justify-center flex rounded-3xl text-xl font-bold  bg-purple-800 text-white border-solid border-blue-200 border-2 shadow-sm shadow-blue-200 hover:bg-purple-950">
+      {text}
+    </button>
+  )
+}
+
+export function OptionButton({ text, onClick }: ButtonProps) {  
+  return (
+    <button onClick={onClick} className="w-full min-w-[200px] p-2 justify-center flex rounded-3xl text-xl font-bold  bg-green-pill text-white border-solid border-blue-200 border-2 shadow-sm shadow-blue-200 hover:bg-green-200">
       {text}
     </button>
   )
