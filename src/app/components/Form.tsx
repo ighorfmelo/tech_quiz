@@ -3,7 +3,12 @@ import Informations from '@/app/components/Informations'
 import { Correct, Wrong } from '@/app/components/Feedback'
 import { useState } from 'react'
 
-export default function Form() {
+type FormProps = {
+  done: () => void,
+  later: () => void,
+}
+
+export default function Form({ done, later}: FormProps) {
   const [isCorrect, setIsCorrect] = useState<Boolean | null>(null)
   const [showInformations, setShowInformations] = useState(false)
 
@@ -25,8 +30,16 @@ export default function Form() {
     setIsCorrect(null)
   }
 
+  const handleLater = () => {
+    later()
+  }
+
+  const handleDone = () => {
+    done()
+  }
+
   if(showInformations) {
-    return <Informations />
+    return <Informations later={handleLater} done={handleDone} />
   }
 
   if (isCorrect === true) {

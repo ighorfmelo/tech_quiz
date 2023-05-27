@@ -4,14 +4,23 @@ import Form from '@/app/components/Form'
 import { useState } from 'react';
 
 export default function Home() {
-  const [isFirstPage, setIsFirstPage] = useState(false)
+  const [isQuizPage, setIsQuizPage] = useState(false)
+  const [points, setPoints] = useState(0)
   const setOpenQuiz = () => {
-    setIsFirstPage(true)
+    setIsQuizPage(true)
+  }
+  const add1point = () => {
+    setIsQuizPage(false)
+    setPoints(points + 1)
+  }
+  const add4points = () => {
+    setIsQuizPage(false)
+    setPoints(points + 4)
   }
   return (
-    <main className="flex h-screen flex-col items-center justify-center bg-black">
-      <div className="bg-blue-900 w-5/6 h-2/3 rounded-xl border-solid border-green--pill border-2 shadow-2xl shadow-green-pill">
-        { isFirstPage ? <Form /> : <Start openQuiz={setOpenQuiz} /> }
+    <main className="flex h-screen flex-col items-center justify-center bg-gray-100">
+      <div className="bg-gray-900 w-5/6 h-2/3 rounded-xl border-solid border-green--pill border-2 shadow-2xl shadow-green-pill">
+        { isQuizPage ? <Form later={add1point} done={add4points} /> : <Start points={points} openQuiz={setOpenQuiz} /> }
       </div>
     </main>
   )
