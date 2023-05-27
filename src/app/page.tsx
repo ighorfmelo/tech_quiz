@@ -18,8 +18,8 @@ export default function Home() {
     setPoints(points + 4)
   }
   return (
-    <main className="flex h-screen flex-col items-center justify-center bg-gray-100">
-      <div className="bg-gray-900 w-5/6 h-2/3 rounded-xl border-solid border-green--pill border-2 shadow-2xl shadow-green-pill">
+    <main className="flex h-screen flex-col items-center justify-center bg-gray-900">
+      <div className="bg-gray-900 w-5/6 h-[90%] rounded-xl border-solid border-green--pill border-2 shadow-2xl shadow-green-pill p-4">
         { isQuizPage ? <Form later={add1point} done={add4points} /> : <Start points={points} openQuiz={setOpenQuiz} /> }
       </div>
     </main>
