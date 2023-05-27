@@ -1,6 +1,6 @@
 import Logo from '@/app/components/UI/Logo'
 import {OptionButton} from '@/app/components/UI/Button'
-import { Correct } from '@/app/components/Feedback'
+import { Correct, Wrong } from '@/app/components/Feedback'
 import { useState } from 'react'
 
 export default function Form() {
@@ -20,7 +20,7 @@ export default function Form() {
     return <Correct />
   } 
   else if (isCorrect === false) {
-    return <h1>Errado</h1>
+    return <Wrong />
   }
   else {
     return (
