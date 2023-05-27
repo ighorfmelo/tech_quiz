@@ -18,7 +18,7 @@ export default function Start({openQuiz, points}: StartProps) {
   return (
     <main className="flex flex-col justify-center gap-4 items-center">
       <Logo />
-      <p className="flex justify-center uppercase font-bold text-4xl text-white drop-shadow-2xl shadow-black">Homeopath</p>
+      <p className="flex justify-center font-bold text-4xl text-white drop-shadow-2xl shadow-black">HomeoPATH</p>
       <div className="flex flex-col justify-center items-center gap-7">
         <Button onClick={handleButtonClick} text="Start Game" />
         <p className="text-white">Points: {points}</p>
