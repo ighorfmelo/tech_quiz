@@ -1,8 +1,17 @@
 import { CorrectButton, WrongButton } from '@/app/components/UI/Button'
+import { useState } from 'react'
 
-export function Correct() {
+type CorrectProps = {
+  learnMore: () => void,
+}
+
+type WrongProps = {
+  tryAgain: () => void,
+}
+
+export function Correct({learnMore}: CorrectProps) {
   const handleCorrect = () => {
-    console.log('aqui')
+    learnMore()
   }
 
   return (
@@ -19,9 +28,9 @@ export function Correct() {
   )
 }
 
-export function Wrong() {
+export function Wrong({tryAgain}: WrongProps) {
   const handleWrong = () => {
-    console.log('aqui')
+    tryAgain()
   }
 
   return (
@@ -32,7 +41,7 @@ export function Wrong() {
       </div>
       <p className="flex justify-center font-bold text-lg text-blue-100">Do you want to learn more?</p>
       <div className="w-full flex justify-center mt-4">
-        <WrongButton onClick={handleWrong} text="Tentar novamente" />
+        <WrongButton onClick={handleWrong} text="Try again" />
       </div>
     </main>
   )

@@ -1,10 +1,11 @@
-import Logo from '@/app/components/UI/Logo'
 import {OptionButton} from '@/app/components/UI/Button'
+import Informations from '@/app/components/Informations'
 import { Correct, Wrong } from '@/app/components/Feedback'
 import { useState } from 'react'
 
 export default function Form() {
   const [isCorrect, setIsCorrect] = useState<Boolean | null>(null)
+  const [showInformations, setShowInformations] = useState(false)
 
   const handleButtonAClick = () => {
     setIsCorrect(false)
@@ -16,11 +17,23 @@ export default function Form() {
     setIsCorrect(false)
   }
 
+  const handleLearnMore = () => {
+    setShowInformations(true)
+  }
+
+  const handleTryAgain = () => {
+    setIsCorrect(null)
+  }
+
+  if(showInformations) {
+    return <Informations />
+  }
+
   if (isCorrect === true) {
-    return <Correct />
+    return <Correct learnMore={handleLearnMore}/>
   } 
   else if (isCorrect === false) {
-    return <Wrong />
+    return <Wrong tryAgain={handleTryAgain} />
   }
   else {
     return (

@@ -1,7 +1,7 @@
 'use client';
 import Logo from '@/app/components/UI/Logo'
 import Button from '@/app/components/UI/Button'
-import { useState } from 'react';
+import { useState } from 'react'
 
 type StartProps = {
   openQuiz: () => void,
