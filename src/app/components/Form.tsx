@@ -1,5 +1,6 @@
 import Logo from '@/app/components/UI/Logo'
 import {OptionButton} from '@/app/components/UI/Button'
+import { Correct } from '@/app/components/Feedback'
 import { useState } from 'react'
 
 export default function Form() {
@@ -16,7 +17,7 @@ export default function Form() {
   }
 
   if (isCorrect === true) {
-    return <h1>Correto</h1>
+    return <Correct />
   } 
   else if (isCorrect === false) {
     return <h1>Errado</h1>
@@ -24,7 +25,7 @@ export default function Form() {
   else {
     return (
       <main className="flex justify-center p-4 h-full flex-col items-center"> 
-        <iframe className="w-[100%] h-[42%]" src="https://www.youtube.com/embed/ZwKhufmMxko" allowFullScreen></iframe>
+        <iframe className="w-[100%] h-[42%]" src="https://www.youtube.com/embed/YVFLICOMm5k?&autoplay=1" title="YouTube video player" allow="autoplay"></iframe>
         <div className="mt-6 flex flex-col gap-4">
           <OptionButton onClick={handleButtonAClick} text="Letter A" />
           <OptionButton onClick={handleButtonBClick} text="Letter B" />

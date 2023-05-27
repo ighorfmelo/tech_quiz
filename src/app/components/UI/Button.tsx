@@ -22,3 +22,11 @@ export function OptionButton({ text, onClick }: ButtonProps) {
     </button>
   )
 }
+
+export function CorrectButton({ text, onClick }: ButtonProps) {  
+  return (
+    <button onClick={onClick} className="w-3/4 min-w-[200px] p-2 justify-center flex rounded-3xl text-xl font-bold  bg-green-pill text-white border-solid border-blue-200 border-2 shadow-sm shadow-blue-200 hover:bg-green-200">
+      {text}
+    </button>
+  )
+}
